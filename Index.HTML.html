@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Investor Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        body, h1, p, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Color Palette and Typography */
+        :root {
+            --background-color: #F8F8F8; /* Very light grey */
+            --text-color: #333333;       /* Dark grey for readability */
+            --link-color: #007BFF;       /* A standard blue for links */
+            --accent-color: #E0E0E0;     /* Slightly darker grey for subtle borders/separators */
+            --disclaimer-bg-color: #F2F2F2; /* Slightly greyer for disclaimer background */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px; /* Overall padding for the page */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            min-height: 100vh; /* Ensure it takes full viewport height */
+        }
+
+        .container {
+            max-width: 600px; /* Constrain content width for readability */
+            width: 100%; /* Make it fluid within max-width */
+            padding: 30px;
+            background-color: #FFFFFF; /* White background for the content area */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            text-align: center; /* Center content within the container */
+        }
+
+        /* Image Styling */
+        .profile-image {
+            width: 120px; /* Small image size */
+            height: 120px;
+            border-radius: 50%; /* Make it round */
+            object-fit: cover; /* Ensure image covers the area */
+            border: 2px solid var(--accent-color); /* Subtle border around the image */
+            margin-bottom: 30px; /* Increased space below image */
+        }
+
+        /* Heading and Paragraphs */
+        h1 {
+            font-size: 2em;
+            color: var(--text-color);
+            margin-bottom: 25px; /* Increased space below title */
+            text-decoration: underline; /* Underline the title */
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 25px; /* Increased default spacing for paragraphs */
+        }
+
+        /* Specific styling for the investment updates section */
+        .investment-updates {
+            margin-bottom: 25px; /* Increased space below the entire updates block */
+        }
+
+        /* Styling for individual investment update lines */
+        .investment-updates p {
+            margin-bottom: 12px; /* Slightly more space between each investment line */
+            font-weight: bold; /* Make the investment lines stand out */
+            line-height: 1.4; /* Adjust line height for better readability within updates */
+        }
+
+        /* Remove bottom margin from the last investment update line */
+        .investment-updates p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Social Media Links Styling */
+        .social-links {
+            margin-top: 30px; /* Increased space above social links */
+            margin-bottom: 30px; /* Increased space below social links */
+            display: flex;
+            flex-direction: column; /* Stack links vertically */
+            gap: 15px; /* Increased space between social links */
+            align-items: center; /* Center items horizontally */
+        }
+
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .social-link-item:hover {
+            color: var(--link-color); /* Change color on hover */
+        }
+
+        /* Separator for clarity */
+        .separator {
+            border-top: 1px solid var(--accent-color);
+            margin: 40px 0; /* Increased margin around separator */
+        }
+
+        /* Disclaimer Text Styling */
+        .disclaimer-text {
+            font-size: 0.8em; /* Smaller text for disclaimers */
+            color: #666666; /* Lighter grey for less prominence */
+            margin-top: 40px; /* Increased space above the disclaimer section */
+            line-height: 1.4;
+            text-align: center;
+            background-color: var(--disclaimer-bg-color); /* Slightly greyer background */
+            padding: 20px; /* Add padding to make it visually smaller/contained */
+            border-radius: 8px; /* Match container border-radius */
+        }
+
+        .disclaimer-text p {
+            margin-bottom: 8px; /* Spacing between disclaimer paragraphs */
+        }
+
+        .disclaimer-text p:last-child {
+            margin-bottom: 0; /* No bottom margin for the very last disclaimer line */
+            font-size: 0.9em; /* Make the last paragraph one font size smaller relative to its parent .disclaimer-text */
+        }
+
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                margin: 0; /* Remove margin on very small screens */
+                border-radius: 0; /* No rounded corners on full-width mobile */
+                box-shadow: none; /* No shadow on full-width mobile */
+            }
+            body {
+                padding: 0; /* Remove body padding on very small screens */
+            }
+            .disclaimer-text {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Your Profile Image -->
+        <img src="https://i.imgur.com/cF0kJTm.jpeg" alt="Your Profile Photo" class="profile-image">
+
+        <!-- Your Name -->
+        <h1>Paul A. Safranek</h1>
+
+        <!-- Short Bio (original part of bio remains here) -->
+        <p>
+            I am a young investor sharing my stock picks and their returns as the years go by 🚀
+        </p>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://x.com/paul_safranek/" target="_blank" class="social-link-item">
+                X: @paul_safranek
+            </a>
+            <a href="https://www.instagram.com/paulsafranek97/" target="_blank" class="social-link-item">
+                Instagram: @paulsafranek97
+            </a>
+            <a href="https://www.snapchat.com/@win.nft" target="_blank" class="social-link-item">
+                Snapchat: @win.nft
+            </a>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Additional Lines of Text (Investment Updates) -->
+        <div class="investment-updates">
+            <p>Date - 7/10/2025: $200 of $GOOG at $174.36 per share.</p>
+            <p>Date - 7/10/2025: $100 of $TSM at $227.86 per share.</p>
+        </div>
+        <p>
+            Updating returns monthly. Will post positions on socials if prompted.
+        </p>
+
+        <!-- Disclaimer Section -->
+        <div class="disclaimer-text">
+            <p>
+                This is NOT financial advice, NOR is it investor advice. I know almost nothing about stocks or companies; this is just me sharing what I am personally doing, and also as a way to track my progress in a public spot.
+            </p>
+            <p>
+                Disclaimer: Investing in the stock market involves risks, including the potential loss of principal. Past performance is not indicative of future results. The content provided on this profile is for informational purposes only and should not be considered as a recommendation to buy or sell any securities. Always consult with a qualified financial professional before making any investment decisions.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
