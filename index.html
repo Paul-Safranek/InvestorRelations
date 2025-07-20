@@ -2,107 +2,123 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QT0PXLS9SC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QT0PXLS9SC');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QT0PXLS9SC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QT0PXLS9SC');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Investor Profile</title>
-    <!-- Favicon link -->
+    <title>Paul Safranek | Investor Profile</title>
     <link rel="icon" href="https://i.imgur.com/bb5557.jpg" type="image/jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic Reset */
-        body, h1, p, a {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Color Palette and Typography */
         :root {
-            --background-color: #F8F8F8; /* Very light grey */
-            --text-color: #333333;       /* Dark grey for readability */
-            --link-color: #007BFF;       /* A standard blue for links */
-            --accent-color: #E0E0E0;     /* Slightly darker grey for subtle borders/separators */
-            --disclaimer-bg-color: #F2F2F2; /* Slightly greyer for disclaimer background */
+            --primary-color: #2563eb;
+            --secondary-color: #4CAF50;
+            --text-color: #333333;
+            --light-bg: #F8F8F8;
+            --card-bg: #FFFFFF;
+            --accent-color: #E0E0E0;
+            --disclaimer-bg: #F2F2F2;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--background-color);
+            background-color: var(--light-bg);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px; /* Overall padding for the page */
+            padding: 0;
+            margin: 0;
             display: flex;
-            justify-content: center; /* Center content horizontally */
-            min-height: 100vh; /* Ensure it takes full viewport height */
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .ticker-tape {
+            width: 100%;
+            height: 46px;
+            margin-bottom: 20px;
         }
 
         .container {
-            max-width: 600px; /* Constrain content width for readability */
-            width: 100%; /* Make it fluid within max-width */
-            padding: 30px;
-            background-color: #FFFFFF; /* White background for the content area */
-            border-radius: 8px; /* Slightly rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-            text-align: center; /* Center content within the container */
+            max-width: 680px;
+            width: 100%;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin: 0 auto 20px;
         }
 
-        /* Image Styling */
         .profile-image {
-            width: 120px; /* Small image size */
-            height: 120px;
-            border-radius: 50%; /* Make it round */
-            object-fit: cover; /* Ensure image covers the area */
-            border: 2px solid var(--accent-color); /* Subtle border around the image */
-            margin-bottom: 30px; /* Increased space below image */
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
         }
 
-        /* Heading and Paragraphs */
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
         h1 {
-            font-size: 2em;
+            font-family: 'Inter', sans-serif;
+            font-size: 2.4em;
+            font-weight: 700;
             color: var(--text-color);
-            margin-bottom: 25px; /* Increased space below title */
-            text-decoration: underline; /* Underline the title */
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
         }
 
-        p {
-            font-size: 1.1em;
-            margin-bottom: 25px; /* Increased default spacing for paragraphs */
+        h1:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: -8px;
+            left: 20%;
         }
 
-        /* Specific styling for the investment updates section */
-        .investment-updates {
-            margin-bottom: 25px; /* Increased space below the entire updates block */
-            text-align: left; /* Align investment updates to the left */
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
         }
 
-        /* Styling for individual investment update lines */
-        .investment-updates p {
-            margin-bottom: 12px; /* Slightly more space between each investment line */
-            font-weight: bold; /* Make the investment lines stand out */
-            line-height: 1.4; /* Adjust line height for better readability within updates */
+        .tradingview-link {
+            display: block;
+            margin-bottom: 25px;
+            font-size: 0.9em;
         }
 
-        /* Remove bottom margin from the last investment update line */
-        .investment-updates p:last-child {
-            margin-bottom: 0;
+        .tradingview-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        /* Social Media Links Styling */
+        .tradingview-link a:hover {
+            color: #1a4fb3;
+            text-decoration: underline;
+        }
+
         .social-links {
-            margin-top: 30px; /* Increased space above social links */
-            margin-bottom: 30px; /* Increased space below social links */
+            margin: 30px 0;
             display: flex;
-            flex-direction: column; /* Stack links vertically */
-            gap: 15px; /* Increased space between social links */
-            align-items: center; /* Center items horizontally */
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .social-link-item {
@@ -110,108 +126,330 @@
             align-items: center;
             text-decoration: none;
             color: var(--text-color);
-            font-weight: bold;
+            font-weight: 500;
             font-size: 1.1em;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.02);
         }
 
         .social-link-item:hover {
-            color: var(--link-color); /* Change color on hover */
+            color: var(--primary-color);
+            background: rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
 
-        /* Separator for clarity */
+        .social-link-item i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
         .separator {
             border-top: 1px solid var(--accent-color);
-            margin: 40px 0; /* Increased margin around separator */
+            margin: 40px 0;
+            position: relative;
         }
 
-        /* Disclaimer Text Styling */
+        .separator:after {
+            content: '✦';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            padding: 0 15px;
+            color: var(--accent-color);
+        }
+
+        .investment-updates {
+            background: rgba(0, 0, 0, 0.02);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .investment-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .investment-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .stock-symbol {
+            color: var(--secondary-color);
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .total-invested {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid var(--accent-color);
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
         .disclaimer-text {
-            font-size: 0.8em; /* Smaller text for disclaimers */
-            color: #666666; /* Lighter grey for less prominence */
-            margin-top: 40px; /* Increased space above the disclaimer section */
-            line-height: 1.4;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 40px;
+            line-height: 1.5;
             text-align: center;
-            background-color: var(--disclaimer-bg-color); /* Slightly greyer background */
-            padding: 20px; /* Add padding to make it visually smaller/contained */
-            border-radius: 8px; /* Match container border-radius */
+            background: var(--disclaimer-bg);
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        .disclaimer-text p {
-            margin-bottom: 8px; /* Spacing between disclaimer paragraphs */
+        .update-frequency {
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 30px;
         }
 
-        .disclaimer-text p:last-child {
-            margin-bottom: 0; /* No bottom margin for the very last disclaimer line */
-            font-size: 0.9em; /* Make the last paragraph one font size smaller relative to its parent .disclaimer-text */
+        .stock-widget {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: 280px;
         }
 
+        .tradingview-widget-container {
+            height: 100%;
+            width: 100%;
+        }
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 15px;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
+                padding: 25px;
             }
-            body {
-                padding: 0; /* Remove body padding on very small screens */
+            h1 {
+                font-size: 2em;
             }
-            .disclaimer-text {
-                padding: 15px;
+            .social-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .stock-widget {
+                height: 210px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Top Ticker Tape -->
+    <div class="ticker-tape">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+          "symbols": [
+            {
+              "proName": "FOREXCOM:SPXUSD",
+              "title": "S&P 500 Index"
+            },
+            {
+              "proName": "FOREXCOM:NSXUSD",
+              "title": "US 100 Cash CFD"
+            },
+            {
+              "proName": "FX_IDC:EURUSD",
+              "title": "EUR to USD"
+            },
+            {
+              "proName": "BITSTAMP:BTCUSD",
+              "title": "Bitcoin"
+            },
+            {
+              "proName": "BITSTAMP:ETHUSD",
+              "title": "Ethereum"
+            }
+          ],
+          "colorTheme": "light",
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": false,
+          "showSymbolLogo": true,
+          "displayMode": "adaptive"
+        }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+
     <div class="container">
-        <!-- Your Profile Image -->
-        <img src="https://i.imgur.com/cF0kJTm.jpeg" alt="Your Profile Photo" class="profile-image">
+        <img src="https://i.imgur.com/cF0kJTm.jpeg" alt="Paul Safranek" class="profile-image">
 
-        <!-- Your Name -->
         <h1>Paul A. Safranek</h1>
+        
+        <div class="tradingview-link">
+            <a href="https://www.tradingview.com/?aff_id=154789" target="_blank">Checkout TradingView for the coolest trading tools</a>
+        </div>
 
-        <!-- Short Bio (original part of bio remains here) -->
-        <p>
-            I am a young investor sharing my stock picks and their returns as the years go by 🚀
-        </p>
+        <p class="tagline">Sharing my investment journey one trade at a time 🔱</p>
 
-        <!-- Social Media Links -->
         <div class="social-links">
             <a href="https://x.com/paul_safranek/" target="_blank" class="social-link-item">
-                X: @paul_safranek
+                <i class="fab fa-twitter"></i> @paul_safranek
             </a>
             <a href="https://www.instagram.com/paulsafranek97/" target="_blank" class="social-link-item">
-                Instagram: @paulsafranek97
+                <i class="fab fa-instagram"></i> @paulsafranek97
             </a>
             <a href="https://www.snapchat.com/@win.nft" target="_blank" class="social-link-item">
-                Snapchat: @win.nft
+                <i class="fab fa-snapchat"></i> @win.nft
             </a>
         </div>
 
         <div class="separator"></div>
 
-        <!-- Additional Lines of Text (Investment Updates) -->
         <div class="investment-updates">
-<p>Date - 7/10/2025: $26.79 of $GME at $33.28 per share. </p>              
-<p>Date - 7/10/2025: $398.98 of $GOOG at $178.12 per share.</p>
-<p>Date - 7/10/2025: $26.65 of $TSM at $232.00 per share.</p>
-<p>Total Invested: $452.42  -- Time till next update: 1 month ~8/9/2025</p> 
+            <!-- GME -->
+            <div class="investment-row">
+                <span>7/10/2025: $26.79 of <span class="stock-symbol" onclick="window.open('https://www.tradingview.com/symbols/NYSE-GME/', '_blank')">$GME</span></span>
+                <span>@ $33.28/share</span>
+            </div>
+            <div class="stock-widget">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    {
+                    "symbol": "NYSE:GME",
+                    "width": "100%",
+                    "height": "100%",
+                    "locale": "en",
+                    "dateRange": "12M",
+                    "colorTheme": "light",
+                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                    "isTransparent": true,
+                    "autosize": true,
+                    "largeChartUrl": ""
+                    }
+                    </script>
+                </div>
+            </div>
+            
+            <!-- GOOG -->
+            <div class="investment-row">
+                <span>7/10/2025: $398.98 of <span class="stock-symbol" onclick="window.open('https://www.tradingview.com/symbols/NASDAQ-GOOG/', '_blank')">$GOOG</span></span>
+                <span>@ $178.12/share</span>
+            </div>
+            <div class="stock-widget">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    {
+                    "symbol": "NASDAQ:GOOG",
+                    "width": "100%",
+                    "height": "100%",
+                    "locale": "en",
+                    "dateRange": "12M",
+                    "colorTheme": "light",
+                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                    "isTransparent": true,
+                    "autosize": true,
+                    "largeChartUrl": ""
+                    }
+                    </script>
+                </div>
+            </div>
+            
+            <!-- TSM -->
+            <div class="investment-row">
+                <span>7/10/2025: $26.65 of <span class="stock-symbol" onclick="window.open('https://www.tradingview.com/symbols/NYSE-TSM/', '_blank')">$TSM</span></span>
+                <span>@ $232.00/share</span>
+            </div>
+            <div class="stock-widget">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                    {
+                    "symbol": "NYSE:TSM",
+                    "width": "100%",
+                    "height": "100%",
+                    "locale": "en",
+                    "dateRange": "12M",
+                    "colorTheme": "light",
+                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                    "isTransparent": true,
+                    "autosize": true,
+                    "largeChartUrl": ""
+                    }
+                    </script>
+                </div>
+            </div>
+            
+            <div class="total-invested">
+                Total Invested: $452.42 • Next update: ~8/9/2025
+            </div>
         </div>
-        <p>
-            Updating returns monthly. Will post positions on socials if prompted.
-        </p>
 
-        <!-- Disclaimer Section -->
+        <p class="update-frequency">Updating returns monthly. Will post positions if requested.</p>
+
         <div class="disclaimer-text">
-            <p>
-                This is NOT financial advice, NOR is it investor advice. I know almost nothing about stocks or companies; this is just me sharing what I am personally doing, and also as a way to track my progress in a public spot.
-            </p>
-            <p>
-                Disclaimer: Investing in the stock market involves risks, including the potential loss of principal. Past performance is not indicative of future results. The content provided on this profile is for informational purposes only and should not be considered as a recommendation to buy or sell any securities. Always consult with a qualified financial professional before making any investment decisions.
-            </p>
+            <p>This is not financial advice, nor is it investor advice. I'm sharing my personal investment journey as a learning exercise and to track my progress publicly.</p>
+            <p>Investing involves risks including potential loss of principal. Past performance doesn't guarantee future results. Consult a financial professional before making investment decisions.</p>
         </div>
+    </div>
+
+    <!-- Bottom Ticker Tape -->
+    <div class="ticker-tape">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+          "symbols": [
+            {
+              "proName": "FOREXCOM:SPXUSD",
+              "title": "S&P 500 Index"
+            },
+            {
+              "proName": "FOREXCOM:NSXUSD",
+              "title": "US 100 Cash CFD"
+            },
+            {
+              "proName": "FX_IDC:EURUSD",
+              "title": "EUR to USD"
+            },
+            {
+              "proName": "BITSTAMP:BTCUSD",
+              "title": "Bitcoin"
+            },
+            {
+              "proName": "BITSTAMP:ETHUSD",
+              "title": "Ethereum"
+            }
+          ],
+          "colorTheme": "light",
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": false,
+          "showSymbolLogo": true,
+          "displayMode": "adaptive"
+        }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
     </div>
 </body>
 </html>
